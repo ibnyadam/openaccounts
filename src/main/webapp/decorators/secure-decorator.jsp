@@ -2,7 +2,6 @@
 <c:set var="root" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -31,21 +30,13 @@
 
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="content">
-			<div class="row">
-				<div class="col-md-12">
-					<sitemesh:write property='body' />
-				</div>
-			</div>
-		</div>
-	</div>
+	<sitemesh:write property='body' />
 	
 	<!-- jQuery -->
     <script src="${root}/resources/components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${root}/resources/components/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    
 </body>
 </html>
