@@ -1,0 +1,4 @@
+<sitemesh>
+    <mapping path="/*" decorator="/decorators/default-decorator.jsp"/>
+    <mapping path="/secure/*"  decorator="/decorators/secure-decorator.jsp"/>
+</sitemesh>
