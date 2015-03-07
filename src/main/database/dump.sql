@@ -31,12 +31,22 @@ CREATE TABLE `head` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
+/*Table structure for table `role` */
+
+DROP TABLE IF EXISTS `role`;
+
+CREATE TABLE `role` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `role` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
 /*Table structure for table `user` */
 
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(6) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(25) NOT NULL,
   `firstname` varchar(255) DEFAULT NULL,
@@ -46,6 +56,17 @@ CREATE TABLE `user` (
   `createdby` int(11) DEFAULT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `user_roles` */
+
+DROP TABLE IF EXISTS `user_roles`;
+
+CREATE TABLE `user_roles` (
+  `user_id` int(6) NOT NULL,
+  `role_id` int(6) NOT NULL,
+  KEY `user` (`user_id`),
+  KEY `role` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
